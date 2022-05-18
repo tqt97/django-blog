@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-bf*a3sjlr*8g3hduc_dgpmw2)d&%_(x(_zg7^5i5zg(*28vtob
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tqt-django-blog.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -123,14 +123,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
+STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# Extra lookup directories for collectstatic to find static files
 STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-# STATICFILES_STORAGE = ['whitenoise.storage.CompressedManifestStaticFilesStorage']
+STATICFILES_STORAGE = ['whitenoise.storage.CompressedManifestStaticFilesStorage']
 
 # MEDIA
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -155,3 +156,6 @@ EMAIL_HOST_USER = 'kutuanonline199@gmail.com'
 EMAIL_HOST_PASSWORD = 'kshguomvyhmzalzw'
 
 django_heroku.settings(locals())
+import dj_database_url
+prod_db  =  dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
