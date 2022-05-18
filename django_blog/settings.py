@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'd33392a8ebc62ec21fd34f27a47ec18f83ba3cbf6176d2f3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
 ALLOWED_HOSTS = ['tqt-django-blog.herokuapp.com']
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -127,9 +128,9 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 # Extra lookup directories for collectstatic to find static files
-STATICFILES_DIR = [
-    os.path.join(BASE_DIR, 'static'),
-]
+# STATICFILES_DIR = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
 
 # STATICFILES_STORAGE = [
 #     'whitenoise.storage.CompressedManifestStaticFilesStorage']
