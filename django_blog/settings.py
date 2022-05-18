@@ -23,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-bf*a3sjlr*8g3hduc_dgpmw2)d&%_(x(_zg7^5i5zg(*28vtob'
+# SECRET_KEY = 'django-insecure-bf*a3sjlr*8g3hduc_dgpmw2)d&%_(x(_zg7^5i5zg(*28vtob'
+SECRET_KEY = 'd33392a8ebc62ec21fd34f27a47ec18f83ba3cbf6176d2f3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -123,14 +124,15 @@ USE_TZ = True
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
-STATIC_ROOT  =   os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 # Extra lookup directories for collectstatic to find static files
 STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-STATICFILES_STORAGE = ['whitenoise.storage.CompressedManifestStaticFilesStorage']
+STATICFILES_STORAGE = [
+    'whitenoise.storage.CompressedManifestStaticFilesStorage']
 
 # MEDIA
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
