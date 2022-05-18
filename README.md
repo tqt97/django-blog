@@ -21,4 +21,3 @@ __Deploy the Django Blog__
 13. heroku create _appname_
 14. heroku config:set DISABLE_COLLECTSTATIC=1
 15. git push heroku main(--your branch name)
-16. 
