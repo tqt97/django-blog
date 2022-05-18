@@ -123,8 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
-STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
+# PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
+STATIC_ROOT  =   os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 # Extra lookup directories for collectstatic to find static files
 STATICFILES_DIR = [
@@ -156,6 +156,6 @@ EMAIL_HOST_USER = 'kutuanonline199@gmail.com'
 EMAIL_HOST_PASSWORD = 'kshguomvyhmzalzw'
 
 django_heroku.settings(locals())
-import dj_database_url
-prod_db  =  dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)
+# import dj_database_url
+# prod_db  =  dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(prod_db)
